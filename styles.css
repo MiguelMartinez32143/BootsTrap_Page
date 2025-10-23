@@ -1,0 +1,311 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f7f7fb;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  margin: 0 10px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #6C63FF !important;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+
+/* --- HERO --- */
+.hero {
+  position: relative;
+  background-image: url("hero.png");
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(108, 99, 255, 0.3); /* Sutil capa violeta */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn1 {
+  background: #6b63ffa6;
+  color: white;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn1:hover {
+  background: #111111a6;
+}
+
+.btn2 {
+  background: #cdccd471;
+  color: white;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn2:hover {
+  background: #111111a6;
+}
+
+/* --- ABOUT --- */
+.about {
+  padding: 5rem 2rem;
+  text-align: center;
+  background: #fff;
+}
+
+.about h2 {
+  color: #6C63FF;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about strong {
+  color: #6C63FF;
+}
+
+.about p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.icon {
+  font-size: 3rem;
+  color: #6C63FF;
+  margin-bottom: 1rem;
+}
+/* --- FOOTER --- */
+footer {
+  background: #6C63FF;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 4rem;
+}
+
+/* --- PORQUE ELEGIRNOS --- */
+.features {
+  background-color: #f8f9ff;
+  padding: 5rem 0;
+}
+
+.feature-card {
+  background: #6C63FF;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(108, 99, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(108, 99, 255, 0.25);
+}
+
+.feature-card .icon {
+  font-size: 3rem;
+  color: #f7f7f7;
+  margin-bottom: 1rem;
+}
+
+.feature-card h4 {
+  color: #faf9f9;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: #f0ebebd5;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.section-tittle {
+  color: #6C63FF;
+}
+
+/* --- EQUIPO --- */
+
+#equipo {
+  background-color: #ffffff;
+}
+
+.team-card {
+  background: #f8f9ff;
+  transition: all 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.team-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #ededf5;
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover .team-img {
+  transform: scale(1.05);
+}
+
+.text-primary {
+  color: #6C63FF !important;
+}
+
+
+.card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 0 auto;
+  border: 4px solid #0d6efd20;
+}
+
+/* --- CONTACTO --- */
+
+.glass-form {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.glass-form:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+
+/* --- SERVICIOS --- */
+
+/* === Sección de planes (Glassmorphism estilo ChatGPT) === */
+.plan-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  color: #222;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.plan-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(108, 99, 255, 0.25);
+  border-color: rgba(108, 99, 255, 0.5);
+}
+
+/* === Estilo destacado del plan intermedio === */
+.featured {
+  background: rgba(108, 99, 255, 0.2);
+  border: 1px solid rgba(108, 99, 255, 0.4);
+  transform: scale(1.05);
+  box-shadow: 0 12px 40px rgba(108, 99, 255, 0.25);
+}
+
+/* === Botón coherente === */
+.btn3 {
+  background: linear-gradient(135deg, #6C63FF, #8C82FF);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.btn3:hover {
+  background: linear-gradient(135deg, #8C82FF, #6C63FF);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(108, 99, 255, 0.4);
+}
+
+/* === Ajustes de texto === */
+.plan-card h3 {
+  font-size: 1.8rem;
+}
+
+.plan-card h2 {
+  font-size: 2.2rem;
+  color: #333;
+}
+
+.plan-card ul li {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* === Fondo de la sección (sutil) === */
+#servicios {
+  background: radial-gradient(circle at top left, rgba(108, 99, 255, 0.08), transparent 60%),
+              radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.08), transparent 70%);
+  border-radius: 25px;
+}
