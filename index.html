@@ -299,7 +299,7 @@
           <a href="#portafolio" class="btn btn-outline-secondary rounded-pill">Cerrar</a>
         </div>
       </div>
-    </div>
+    </div> 
 
 
     <!-- EQUIPO -->
@@ -361,38 +361,58 @@
         </p>
       </div>
 
-      <form class="glass-form p-5 rounded-4 shadow-lg mx-auto" style="max-width: 900px; backdrop-filter: blur(10px); background: rgba(255,255,255,0.1);">
+      <form class="needs-validation glass-form p-5 rounded-4 shadow-lg mx-auto"
+            novalidate
+            style="max-width: 900px; backdrop-filter: blur(10px); background: rgba(255,255,255,0.1);">
         <div class="row g-4">
 
           <!-- Campo nombre -->
           <div class="col-md-6">
             <div class="form-floating">
-              <input type="text" class="form-control form-control-lg" id="nombre" placeholder="Nombre" required>
+              <input type="text" class="form-control form-control-lg"
+                    id="nombre" name="nombre" placeholder="Nombre" required minlength="2">
               <label for="nombre">Nombre</label>
+              <div class="valid-feedback">Nombre registrado</div>
+              <div class="invalid-feedback">Por favor ingresa tu nombre (mín. 2 caracteres).</div>
             </div>
           </div>
 
           <!-- Campo teléfono -->
           <div class="col-md-6">
             <div class="form-floating">
-              <input type="text" class="form-control form-control-lg" id="telefono" placeholder="Teléfono" required>
+              <input type="tel" class="form-control form-control-lg"
+                    id="telefono" name="telefono" placeholder="Teléfono"
+                    inputmode="tel"
+                    pattern="^\+?(\s?57)?[\s\-\.]?\(?\d{3}\)?[\s\-\.]?\d{3}[\s\-\.]?\d{4}$"
+                    required>
               <label for="telefono">Teléfono</label>
+              <div class="valid-feedback">Teléfono registrado</div>
+              <div class="invalid-feedback">
+                Ingresa un teléfono válido (puede incluir +57).
+              </div>
             </div>
           </div>
 
           <!-- Campo correo -->
           <div class="col-12">
             <div class="form-floating">
-              <input type="email" class="form-control form-control-lg" id="correo" placeholder="Correo electrónico" required>
+              <input type="email" class="form-control form-control-lg"
+                    id="correo" name="correo" placeholder="Correo electrónico" required>
               <label for="correo">Correo electrónico</label>
+              <div class="valid-feedback">Correo registrado</div>
+              <div class="invalid-feedback">Por favor ingresa un correo electrónico válido.</div>
             </div>
           </div>
 
           <!-- Campo mensaje -->
           <div class="col-12">
             <div class="form-floating">
-              <textarea class="form-control form-control-lg" placeholder="Tu mensaje" id="comentarios" style="height: 150px"></textarea>
+              <textarea class="form-control form-control-lg"
+                        id="comentarios" name="mensaje" placeholder="Tu mensaje"
+                        style="height: 150px" required minlength="5"></textarea>
               <label for="comentarios">Mensaje</label>
+              <div class="valid-feedback">Mensaje listo</div>
+              <div class="invalid-feedback">Por favor ingresa tu mensaje (mín. 5 caracteres).</div>
             </div>
           </div>
 
@@ -411,4 +431,19 @@
       <p>© 2025 TechBrand. Todos los derechos reservados.</p>
     </footer>
   </body>
+  <script>
+  (() => {
+    'use strict';
+    const forms = document.querySelectorAll('.needs-validation');
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  })();
+</script>
 </html>
