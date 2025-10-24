@@ -309,3 +309,131 @@ footer {
               radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.08), transparent 70%);
   border-radius: 25px;
 }
+
+/* === PORTAFOLIO === */
+#portafolio {
+  background: radial-gradient(circle at top left, rgba(108, 99, 255, 0.06), transparent 60%),
+              radial-gradient(circle at bottom right, rgba(108, 99, 255, 0.05), transparent 60%);
+  border-radius: 25px;
+}
+
+/* Filtros con radio oculto + labels como pills */
+.pf-input { display: none; }
+.pf-pill {
+  display: inline-block;
+  margin: 0 .25rem .5rem;
+  border-radius: 30px;
+  padding: 10px 18px;
+  cursor: pointer;
+  user-select: none;
+  background: rgba(108, 99, 255, 0.12);
+  color: #6C63FF;
+  border: 1px solid rgba(108, 99, 255, 0.25);
+  transition: all .25s ease;
+  font-weight: 500;
+}
+.pf-pill:hover { filter: brightness(0.98); }
+
+/* Estado activo visual (usando el hermano siguiente) */
+#pf-all:checked + label,
+#pf-web:checked + label,
+#pf-uiux:checked + label,
+#pf-brand:checked + label {
+  background: linear-gradient(135deg, #6C63FF, #8C82FF);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 6px 20px rgba(108, 99, 255, 0.35);
+}
+
+/* Lógica de filtrado: por defecto todo visible */
+.portfolio-grid .pf-item { display: block; }
+
+/* Cuando se selecciona una categoría, ocultar lo que no coincide */
+#pf-web:checked ~ .portfolio-grid .pf-item:not(.cat-web) { display: none; }
+#pf-uiux:checked ~ .portfolio-grid .pf-item:not(.cat-uiux) { display: none; }
+#pf-brand:checked ~ .portfolio-grid .pf-item:not(.cat-brand) { display: none; }
+/* "Todo" muestra todo */
+#pf-all:checked ~ .portfolio-grid .pf-item { display: block; }
+
+/* Tarjetas */
+.portfolio-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #f8f9ff;
+  transition: transform .35s ease, box-shadow .35s ease;
+  display: block;
+  text-decoration: none;
+}
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(108, 99, 255, 0.20);
+}
+
+.portfolio-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.02);
+  transition: transform .6s ease;
+}
+.portfolio-card:hover .portfolio-img { transform: scale(1.06); }
+
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: end start;
+  padding: 1.25rem;
+  background: linear-gradient(180deg, rgba(17,17,17,0) 45%, rgba(21,16,80,0.75) 100%);
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+.portfolio-card:hover .portfolio-overlay { opacity: 1; }
+
+.bg-portfolio {
+  background: rgba(255,255,255,0.18) !important;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.35);
+  backdrop-filter: blur(6px);
+}
+
+/* Lightbox CSS-only (usa :target) */
+.pf-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 8, 30, 0.6);
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+  padding: 1rem;
+  z-index: 1050;
+}
+.pf-lightbox:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.pf-dialog {
+  max-width: 900px;
+  width: 100%;
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(108,99,255,0.25);
+  border-radius: 20px;
+  box-shadow: 0 15px 45px rgba(108, 99, 255, 0.25);
+  padding: 1.25rem;
+}
+.pf-dialog .modal-title {
+  color: #6C63FF;
+  font-weight: 700;
+  margin-bottom: .75rem;
+}
+
+@media (max-width: 576px) {
+  .portfolio-img { height: 200px; }
+}
