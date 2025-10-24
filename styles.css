@@ -282,6 +282,11 @@ footer {
   transition: all 0.3s ease;
 }
 
+a.btn3 {
+  text-decoration: none !important;   
+  color: white !important;           
+}
+
 .btn3:hover {
   background: linear-gradient(135deg, #8C82FF, #6C63FF);
   transform: translateY(-3px);
@@ -436,4 +441,105 @@ footer {
 
 @media (max-width: 576px) {
   .portfolio-img { height: 200px; }
+}
+
+/* ========== SECCIÓN CONTACTO - GLASS GOTA DE AGUA ========== *//* ===== Contacto – Glass adaptado al estilo del sitio (sin luz detrás) ===== */
+
+/* Fondo claro coherente con el sitio */
+#contacto{
+  background:
+    radial-gradient(circle at top left, rgba(108, 99, 255, 0.06), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(108, 99, 255, 0.05), transparent 60%),
+    #f7f7fb;
+  color: #222;
+  padding: 4rem 1rem;
+}
+
+/* Tarjeta glass limpia */
+.drop-card{
+  position: relative;
+  max-width: 940px;
+  margin: 0 auto;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(12px) saturate(130%);
+  -webkit-backdrop-filter: blur(12px) saturate(130%);
+  border: 1px solid rgba(108, 99, 255, 0.18);
+  box-shadow: 0 16px 40px rgba(108, 99, 255, 0.10);
+  overflow: hidden;
+  padding: clamp(20px, 4vw, 44px);
+  isolation: isolate;
+}
+
+/* Borde/halo MUY sutil */
+.drop-card::before{
+  content:"";
+  position:absolute; inset:0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(140deg, #ffffffb3, #ffffff1a 30%, #8c82ff22 60%, #ffffff1a 85%, #ffffffb3);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  pointer-events:none;
+}
+
+/* ❌ Sin luz/brillo detrás */
+.drop-card::after{ content:none; }
+
+/* Encabezado del bloque */
+.badge-soft{
+  display:inline-block;
+  background: linear-gradient(180deg, #ffffffcc, #ffffff80);
+  border:1px solid rgba(108, 99, 255, 0.25);
+  color:#6C63FF;
+  border-radius: 999px;
+  padding:.25rem .65rem;
+  font-size:.75rem;
+  letter-spacing:.02em;
+}
+.soft-divider{
+  height:1px;
+  background: linear-gradient(90deg, transparent, rgba(108,99,255,0.35), transparent);
+  margin:.5rem 0 1.25rem;
+}
+
+/* Inputs flotantes – modo claro del sitio */
+.form-floating>.form-control,
+.form-floating>.form-select{
+  background-color: rgba(255,255,255,0.85) !important;
+  color:#222;
+  border:1px solid rgba(108, 99, 255, 0.25);
+}
+.form-floating>.form-control:focus,
+.form-floating>.form-select:focus{
+  border-color: #6C63FF;
+  box-shadow: 0 0 0 .25rem rgba(108, 99, 255, .20);
+}
+.form-floating>label{
+  color:#666;
+  text-shadow: none;
+}
+.invalid-feedback, .valid-feedback{ color:#444; opacity:.95; }
+
+/* Checks y radios */
+.form-check-input{
+  background-color: #fff;
+  border:1px solid rgba(108, 99, 255, 0.35);
+}
+.form-check-input:checked{
+  background-color: #6C63FF;
+  border-color: #6C63FF;
+}
+
+/* Botones: usas tu .btn3 existente */
+.btn-outline-brand{
+  border-radius: 30px;
+  border:1px solid #6C63FF;
+  color:#6C63FF;
+  background: transparent;
+}
+.btn-outline-brand:hover{
+  background: #6C63FF;
+  color:#fff;
+  border-color: #6C63FF;
 }
